@@ -1,0 +1,333 @@
+════════════════════════════════════════════════════════════════════════════
+IMAGE GENERATION PROMPTS FOR SCHOLAX HOMEPAGE
+Color Scheme: Purple (#9333ea, #a855f7), Pink (#ec4899, #f472b6), White (#ffffff)
+════════════════════════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════════════════════
+PROMPT 1: HERO SECTION ILLUSTRATION
+═══════════════════════════════════════════════════════════════════════════
+
+Create a modern, vibrant illustration for a college management system hero section.
+
+STYLE: 
+- Flat design with subtle gradients
+- Clean geometric shapes
+- Professional yet approachable
+- Similar to modern SaaS illustrations (Notion, Slack, Dropbox style)
+
+COLOR PALETTE (EXACT COLORS):
+- Primary Purple: #9333ea and #a855f7 (40% of composition)
+- Secondary Pink: #ec4899 and #f472b6 (30% of composition)
+- White: #ffffff (20% of composition)
+- Light Purple: #faf5ff and #e9d5ff (10% of composition)
+
+MAIN COMPOSITION (Center-Right Focus):
+- Large laptop/tablet screen displaying a colorful attendance dashboard
+- Dashboard shows:
+  * Purple gradient header bar
+  * Green attendance buttons (Present)
+  * Red attendance buttons (Absent)
+  * Circular progress charts with purple-pink gradients
+  * Student profile cards with avatars
+  * Bar graphs showing attendance percentages
+
+CHARACTERS:
+- LEFT SIDE: Female teacher (professional attire) holding a tablet
+  * Tablet shows green checkmarks
+  * Confident, friendly expression
+  * Modern illustration style
+  * Purple-toned clothing
+
+- RIGHT SIDE: Male student with backpack and books
+  * Smartphone showing "95%" attendance badge
+  * Happy, satisfied expression
+  * Pink-toned clothing
+  * Books in purple and pink colors
+
+FLOATING ELEMENTS (Scattered around):
+- Calendar icon with dates (purple outline)
+- Document/CSV file icon (pink)
+- Attendance percentage badges: "90%", "95%", "85%" (circular, gradient)
+- Email envelope with @ symbol (purple)
+- Checkmark icons in green circles
+- Clock showing 9:00 AM (pink outline)
+- Notification bell with red badge
+- Star icons indicating success
+
+BACKGROUND:
+- Soft gradient from light purple (top-left) to light pink (bottom-right)
+- Abstract geometric shapes: circles, rounded rectangles (low opacity)
+- Curved wave or blob shapes in background (very subtle)
+- Small dots connected by lines (network effect) in light purple
+
+TECHNICAL SPECS:
+- Dimensions: 1200x800 pixels
+- Format: PNG with transparent/white background
+- Resolution: High-quality for web (300 DPI)
+- Modern, clean edges with rounded corners
+- Shadows: Subtle, soft shadows on main elements
+
+MOOD: Professional, organized, efficient, modern, trustworthy, educational
+AVOID: Childish elements, overly complex details, dark colors, cluttered composition
+
+═══════════════════════════════════════════════════════════════════════════
+PROMPT 2: HOW IT WORKS - WORKFLOW ILLUSTRATION
+═══════════════════════════════════════════════════════════════════════════
+
+Create an isometric or 2.5D illustration showing a three-stage workflow process for college management.
+
+STYLE:
+- Isometric/2.5D perspective
+- Clean, modern, technical
+- Connected workflow with visual flow
+- Similar to process diagrams in modern tech companies
+
+COLOR PALETTE (EXACT COLORS):
+- Purple: #9333ea (Admin section)
+- Pink: #ec4899 (Teacher section)
+- Purple-Pink gradient (Student section)
+- White: #ffffff (backgrounds, highlights)
+- Green: #22c55e (success indicators)
+- Red: #ef4444 (absent indicators)
+
+LAYOUT (Horizontal Flow, Left to Right):
+
+┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+│   ADMIN      │ ──→ │   TEACHER    │ ──→ │   STUDENT    │
+│  (Purple)    │    │   (Pink)     │    │ (Gradient)   │
+└──────────────┘    └──────────────┘    └──────────────┘
+
+SECTION 1 - ADMIN (LEFT, Purple Theme):
+- Admin figure sitting at desk with large monitor
+- Computer screen shows:
+  * CSV/Excel file being uploaded (floating above)
+  * Student cards materializing in grid layout
+  * Teacher assignment interface
+- Visual elements:
+  * Purple glowing aura around admin
+  * Folder icon with upward arrow (upload)
+  * Multiple student profile cards (purple borders)
+  * Connection lines to teacher section
+- Base: Purple platform/stage
+
+SECTION 2 - TEACHER (CENTER, Pink Theme):
+- Teacher figure standing with iPad/tablet device
+- Tablet screen shows:
+  * Student list with names
+  * Large green "Present" button
+  * Large red "Absent" button
+  * Date calendar selector
+- Visual elements:
+  * Pink glowing aura
+  * Classroom icon or section badge
+  * Floating checkmarks (green) and X marks (red)
+  * Student avatars in a grid
+  * Connection lines from admin and to student
+- Base: Pink platform/stage
+
+SECTION 3 - STUDENT (RIGHT, Purple-Pink Gradient):
+- Student figure with smartphone
+- Phone screen shows:
+  * Circular progress chart (85% filled, gradient)
+  * Subject cards: Math, Physics, Chemistry
+  * Percentage badges: 92%, 85%, 78%
+- Visual elements:
+  * Purple-pink gradient glowing aura
+  * Book icons with subject labels
+  * Progress bars (gradient filled)
+  * Trophy/achievement icons
+  * Notification bell with badge
+- Base: Gradient platform/stage
+
+CONNECTING ELEMENTS:
+- Curved, dotted arrows flowing between sections (gradient: purple to pink)
+- Data transfer icons (small cloud sync symbols)
+- Small checkmarks along the path
+- Flowing particles suggesting data movement
+- Numbers 1, 2, 3 in circles above each section
+
+BACKGROUND:
+- Light gradient: purple (left) transitioning to pink (right)
+- Subtle isometric grid pattern on floor
+- Floating geometric shapes (cubes, spheres) in brand colors (low opacity)
+- Soft shadows beneath platforms
+
+ADDITIONAL DETAILS:
+- Small UI elements: buttons, cards, icons throughout
+- Depth and perspective for 2.5D effect
+- Smooth color transitions
+- Professional lighting effects
+
+TECHNICAL SPECS:
+- Dimensions: 1600x600 pixels
+- Format: PNG with white/transparent background
+- Style: Isometric illustration, modern SaaS aesthetic
+- Clean lines, rounded corners throughout
+
+MOOD: Connected, efficient, automated, seamless, collaborative, modern
+REFERENCE STYLE: Isometric workflow illustrations like Asana, Monday.com
+
+═══════════════════════════════════════════════════════════════════════════
+PROMPT 3: FEATURES DASHBOARD - UI SHOWCASE
+═══════════════════════════════════════════════════════════════════════════
+
+Create a modern UI mockup showcasing the ScholaX dashboard with feature icons.
+
+STYLE:
+- Modern UI/UX design
+- Glassmorphism effects
+- Clean, professional interface
+- Vibrant gradients
+- Similar to Figma/Dribbble premium UI designs
+
+COLOR PALETTE (EXACT COLORS):
+- Purple: #9333ea, #a855f7 (primary elements)
+- Pink: #ec4899, #f472b6 (secondary elements)
+- White: #ffffff (backgrounds, cards)
+- Green: #22c55e (present/success)
+- Red: #ef4444 (absent/alerts)
+- Text: #581c87 (dark purple), #6b7280 (gray)
+
+MAIN DASHBOARD MOCKUP (Center, 70% of canvas):
+
+DEVICE: Modern laptop or tablet (MacBook Pro style)
+- Sleek silver frame
+- Realistic screen with slight reflection
+- Subtle shadow beneath device
+
+SCREEN CONTENT (Dashboard Interface):
+
+1. HEADER (Top):
+   - Purple-to-pink gradient background
+   - "ScholaX" logo (white, left)
+   - User profile (circular avatar, right)
+   - Navigation menu items (white text)
+
+2. SIDEBAR (Left, 20% of screen):
+   - Light purple gradient background (#faf5ff to #f3e8ff)
+   - Navigation items:
+     * Dashboard (purple highlight)
+     * Students
+     * Attendance
+     * Reports
+   - Logout button (red, bottom)
+
+3. MAIN CONTENT (Right, 80% of screen):
+   - White background with subtle purple tint
+   
+   TOP ROW - STAT CARDS (4 cards):
+   * Total Students: 1,250 (purple card, trending up arrow)
+   * Teachers: 48 (pink card, teacher icon)
+   * Attendance Rate: 94% (green card, checkmark)
+   * Sections: 24 (purple-pink gradient card, grid icon)
+
+   MIDDLE - ATTENDANCE GRID:
+   * Student list table with columns:
+     - Photo (circular avatars)
+     - Name
+     - Reg No.
+     - Status column with:
+       > Green "Present" buttons (some filled)
+       > Red "Absent" buttons (some filled)
+   * 5-6 student rows visible
+   * Alternating light purple row backgrounds
+
+   BOTTOM - CHARTS:
+   * Left: Circular progress chart (purple-pink gradient, 87% filled)
+   * Right: Bar chart showing subject-wise attendance (gradient bars)
+
+FEATURE ICONS (Floating around dashboard, 30% of canvas):
+
+Position 6 circular icons around the laptop:
+
+1. TOP-LEFT: Security/Shield Icon
+   - Purple-pink gradient background
+   - White shield with checkmark
+   - Glow effect
+   - "OTP Auth" label below
+
+2. TOP-RIGHT: Upload/Import Icon
+   - Pink gradient background
+   - White upload arrow with document
+   - Glow effect
+   - "CSV/Excel" label below
+
+3. MIDDLE-LEFT: Analytics Icon
+   - Purple gradient background
+   - White bar chart with growth arrow
+   - Glow effect
+   - "Analytics" label below
+
+4. MIDDLE-RIGHT: Calendar Icon
+   - Pink-purple gradient background
+   - White calendar with checkmark
+   - Glow effect
+   - "Tracking" label below
+
+5. BOTTOM-LEFT: Responsive Icon
+   - Purple gradient background
+   - White smartphone/devices icon
+   - Glow effect
+   - "Responsive" label below
+
+6. BOTTOM-RIGHT: Cloud Sync Icon
+   - Pink gradient background
+   - White cloud with sync arrows
+   - Glow effect
+   - "Real-time" label below
+
+VISUAL EFFECTS:
+- Glassmorphism: Semi-transparent cards with blur effect
+- Soft glows: Purple and pink halos around icons (outer-glow: 20px)
+- Subtle connecting lines: Dotted lines from icons to dashboard (gradient)
+- Floating particles: Small dots in purple/pink scattered around
+- Depth: Layered shadows for 3D effect
+- Reflections: Subtle reflection beneath laptop
+
+BACKGROUND:
+- White base color
+- Radial gradient overlay: purple (center) fading to pink (edges), very subtle
+- Optional: Geometric pattern (hexagons or dots) in ultra-light purple (#faf5ff)
+
+LIGHTING:
+- Top-left light source
+- Soft shadows (bottom-right direction)
+- Highlights on glass surfaces
+- Ambient occlusion for depth
+
+TECHNICAL SPECS:
+- Dimensions: 1400x1000 pixels
+- Format: PNG with white background
+- High quality for web display
+- Clean, crisp edges
+- Professional gradient applications
+
+MOOD: High-tech, professional, efficient, modern, innovative, trustworthy
+REFERENCE STYLE: Premium UI screenshots from Dribbble, Behance (SaaS dashboards)
+AVOID: Cluttered UI, outdated design patterns, dull colors
+
+═══════════════════════════════════════════════════════════════════════════
+END OF IMAGE PROMPTS
+═══════════════════════════════════════════════════════════════════════════
+
+USAGE INSTRUCTIONS:
+
+1. Copy each prompt separately into your AI image generator
+2. Generate multiple variations and pick the best
+3. Save images with descriptive names:
+   - hero-illustration.png
+   - workflow-process.png
+   - dashboard-showcase.png
+4. Place in /public folder
+5. Update image placeholders in app/page.tsx with actual images
+
+RECOMMENDED TOOLS:
+- Midjourney (Best for illustrations)
+- DALL-E 3 (Good for detailed UI mockups)
+- Leonardo.ai (Good for consistent style)
+- Adobe Firefly (Commercial use friendly)
+- Ideogram (Good for text in images)
+
+For best results, you may need to iterate on prompts and add style references like:
+"in the style of [specific designer/product]" or use --style parameters in Midjourney.
+
