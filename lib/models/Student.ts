@@ -69,8 +69,8 @@ const StudentSchema = new Schema<IStudent>(
 );
 
 // Indexes
+// Note: registrationNo already has unique: true which creates an index automatically
 StudentSchema.index({ userId: 1 });
-StudentSchema.index({ registrationNo: 1 });
 StudentSchema.index({ batch: 1, section: 1 });
 StudentSchema.index({ branch: 1 });
 StudentSchema.index({ email: 1 });

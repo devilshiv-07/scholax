@@ -51,7 +51,7 @@ const UserSchema = new Schema<IUser>(
 );
 
 // Indexes
-UserSchema.index({ email: 1 });
+// Note: email already has unique: true which creates an index automatically
 UserSchema.index({ otpExpiry: 1 });
 
 // Delete OTP after verification or expiry
