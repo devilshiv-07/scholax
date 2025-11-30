@@ -1,7 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
-import connectDB from '@/lib/db/connection';
-import { Teacher, Attendance } from '@/lib/models';
-import { requireTeacher } from '@/lib/middleware/auth';
+import { NextRequest, NextResponse } from "next/server";
+import connectDB from "@/lib/db/connection";
+import { Teacher, Attendance } from "@/lib/models";
+import { Types } from "mongoose";
+import { requireTeacher } from "@/lib/middleware/auth";
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,16 +18,23 @@ export async function POST(request: NextRequest) {
     const { attendanceRecords, date, batch, section, subject } = body;
 
     // Validate inputs
-    if (!attendanceRecords || !Array.isArray(attendanceRecords) || attendanceRecords.length === 0) {
+    if (
+      !attendanceRecords ||
+      !Array.isArray(attendanceRecords) ||
+      attendanceRecords.length === 0
+    ) {
       return NextResponse.json(
-        { success: false, error: 'Attendance records are required' },
+        { success: false, error: "Attendance records are required" },
         { status: 400 }
       );
     }
 
     if (!date || !batch || !section || !subject) {
       return NextResponse.json(
-        { success: false, error: 'Date, batch, section, and subject are required' },
+        {
+          success: false,
+          error: "Date, batch, section, and subject are required",
+        },
         { status: 400 }
       );
     }
@@ -38,7 +46,7 @@ export async function POST(request: NextRequest) {
     const teacher = await Teacher.findOne({ userId: user.userId });
     if (!teacher) {
       return NextResponse.json(
-        { success: false, error: 'Teacher record not found' },
+        { success: false, error: "Teacher record not found" },
         { status: 404 }
       );
     }
@@ -58,11 +66,11 @@ export async function POST(request: NextRequest) {
 
       if (!studentId || !status) {
         results.failed++;
-        results.errors.push('Missing student ID or status');
+        results.errors.push("Missing student ID or status");
         continue;
       }
 
-      if (status !== 'present' && status !== 'absent') {
+      if (status !== "present" && status !== "absent") {
         results.failed++;
         results.errors.push(`Invalid status for student ${studentId}`);
         continue;
@@ -79,13 +87,13 @@ export async function POST(request: NextRequest) {
         if (existingAttendance) {
           // Update existing attendance
           existingAttendance.status = status;
-          existingAttendance.teacherId = teacher._id;
+          existingAttendance.teacherId = teacher._id as Types.ObjectId;
           await existingAttendance.save();
         } else {
           // Create new attendance record
           await Attendance.create({
             studentId,
-            teacherId: teacher._id,
+            teacherId: teacher._id as Types.ObjectId,
             subject,
             date: attendanceDate,
             status,
@@ -97,7 +105,9 @@ export async function POST(request: NextRequest) {
         results.success++;
       } catch (error: any) {
         results.failed++;
-        results.errors.push(`Failed to save attendance for student ${studentId}: ${error.message}`);
+        results.errors.push(
+          `Failed to save attendance for student ${studentId}: ${error.message}`
+        );
       }
     }
 
@@ -107,9 +117,13 @@ export async function POST(request: NextRequest) {
       results,
     });
   } catch (error: any) {
-    console.error('Mark attendance error:', error);
+    console.error("Mark attendance error:", error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error', message: error.message },
+      {
+        success: false,
+        error: "Internal server error",
+        message: error.message,
+      },
       { status: 500 }
     );
   }
@@ -125,15 +139,18 @@ export async function GET(request: NextRequest) {
 
     // Get query parameters
     const { searchParams } = new URL(request.url);
-    const batch = searchParams.get('batch');
-    const section = searchParams.get('section');
-    const subject = searchParams.get('subject');
-    const date = searchParams.get('date');
+    const batch = searchParams.get("batch");
+    const section = searchParams.get("section");
+    const subject = searchParams.get("subject");
+    const date = searchParams.get("date");
 
     // Validate inputs
     if (!batch || !section || !subject || !date) {
       return NextResponse.json(
-        { success: false, error: 'Batch, section, subject, and date are required' },
+        {
+          success: false,
+          error: "Batch, section, subject, and date are required",
+        },
         { status: 400 }
       );
     }
@@ -150,22 +167,25 @@ export async function GET(request: NextRequest) {
       section: section.toUpperCase(),
       subject,
       date: attendanceDate,
-    }).populate('studentId');
+    }).populate("studentId");
 
     return NextResponse.json({
       success: true,
-      attendance: attendanceRecords.map(a => ({
+      attendance: attendanceRecords.map((a) => ({
         id: a._id,
         studentId: a.studentId._id,
         status: a.status,
       })),
     });
   } catch (error: any) {
-    console.error('Get attendance error:', error);
+    console.error("Get attendance error:", error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error', message: error.message },
+      {
+        success: false,
+        error: "Internal server error",
+        message: error.message,
+      },
       { status: 500 }
     );
   }
 }
-

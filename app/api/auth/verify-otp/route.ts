@@ -1,8 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
-import connectDB from '@/lib/db/connection';
-import { User, Student, Teacher } from '@/lib/models';
-import { isOTPExpired } from '@/lib/utils/otp';
-import { generateToken } from '@/lib/utils/jwt';
+import { NextRequest, NextResponse } from "next/server";
+import connectDB from "@/lib/db/connection";
+import { User, Student, Teacher } from "@/lib/models";
+import type { IUser } from "@/lib/models";
+import { isOTPExpired } from "@/lib/utils/otp";
+import { generateToken } from "@/lib/utils/jwt";
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,7 +13,7 @@ export async function POST(request: NextRequest) {
     // Validate inputs
     if (!email || !otp) {
       return NextResponse.json(
-        { success: false, error: 'Email and OTP are required' },
+        { success: false, error: "Email and OTP are required" },
         { status: 400 }
       );
     }
@@ -21,11 +22,13 @@ export async function POST(request: NextRequest) {
     await connectDB();
 
     // Find user
-    const user = await User.findOne({ email: email.toLowerCase() });
+    const user = (await User.findOne({
+      email: email.toLowerCase(),
+    })) as IUser | null;
 
     if (!user) {
       return NextResponse.json(
-        { success: false, error: 'User not found' },
+        { success: false, error: "User not found" },
         { status: 404 }
       );
     }
@@ -33,7 +36,7 @@ export async function POST(request: NextRequest) {
     // Check if OTP exists
     if (!user.otp || !user.otpExpiry) {
       return NextResponse.json(
-        { success: false, error: 'No OTP found. Please request a new one.' },
+        { success: false, error: "No OTP found. Please request a new one." },
         { status: 400 }
       );
     }
@@ -41,7 +44,7 @@ export async function POST(request: NextRequest) {
     // Check if OTP is expired
     if (isOTPExpired(user.otpExpiry)) {
       return NextResponse.json(
-        { success: false, error: 'OTP has expired. Please request a new one.' },
+        { success: false, error: "OTP has expired. Please request a new one." },
         { status: 400 }
       );
     }
@@ -49,7 +52,7 @@ export async function POST(request: NextRequest) {
     // Verify OTP
     if (user.otp !== otp) {
       return NextResponse.json(
-        { success: false, error: 'Invalid OTP' },
+        { success: false, error: "Invalid OTP" },
         { status: 400 }
       );
     }
@@ -62,20 +65,20 @@ export async function POST(request: NextRequest) {
 
     // Generate JWT token
     const token = generateToken({
-      userId: user._id.toString(),
+      userId: String(user._id),
       email: user.email,
       role: user.role,
     });
 
     // Get additional user details based on role
-    let userData: any = {
+    const userData: Record<string, unknown> = {
       id: user._id,
       email: user.email,
       role: user.role,
       isVerified: user.isVerified,
     };
 
-    if (user.role === 'student') {
+    if (user.role === "student") {
       const student = await Student.findOne({ userId: user._id });
       if (student) {
         userData.name = student.name;
@@ -84,7 +87,7 @@ export async function POST(request: NextRequest) {
         userData.batch = student.batch;
         userData.section = student.section;
       }
-    } else if (user.role === 'teacher') {
+    } else if (user.role === "teacher") {
       const teacher = await Teacher.findOne({ userId: user._id });
       if (teacher) {
         userData.name = teacher.name;
@@ -94,26 +97,26 @@ export async function POST(request: NextRequest) {
     // Create response with token in httpOnly cookie
     const response = NextResponse.json({
       success: true,
-      message: 'Login successful',
+      message: "Login successful",
       user: userData,
     });
 
     // Set token in httpOnly cookie (secure in production)
-    response.cookies.set('token', token, {
+    response.cookies.set("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
       maxAge: 7 * 24 * 60 * 60, // 7 days
-      path: '/',
+      path: "/",
     });
 
     return response;
-  } catch (error: any) {
-    console.error('Verify OTP error:', error);
+  } catch (error: unknown) {
+    console.error("Verify OTP error:", error);
+    const message = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error', message: error.message },
+      { success: false, error: "Internal server error", message },
       { status: 500 }
     );
   }
 }
-
